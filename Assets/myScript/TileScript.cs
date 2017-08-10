@@ -28,7 +28,10 @@ public class TileScript : MonoBehaviour {
 		detector.offset = detector.offset + coordination;
 
 		GameObject targetTile = resonanceTile;
+
+		detector.offset = detector.offset - coordination;
 		resonanceTile = null;
+
 		return targetTile;
 	}
 
@@ -49,6 +52,4 @@ public class TileScript : MonoBehaviour {
 			resonanceTile = col.gameObject;
 		}
 	}
-		
-
 }

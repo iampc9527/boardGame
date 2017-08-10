@@ -12,7 +12,11 @@ public class BoardManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		GameObject nearTile = currentTile.GetComponent<TileScript> ().getNearByTile (new Vector2(1, 0));
+		if (nearTile != null) {
+			float alpha = nearTile.GetComponent<SpriteRenderer> ().color.a;
+			nearTile.GetComponent<SpriteRenderer> ().color.a = ((alpha + 1.0f) % 255);
+		}
 	}
 
 
